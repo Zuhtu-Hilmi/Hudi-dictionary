@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Hudi Dictionary</title>
+  <link id="theme" rel="stylesheet" href="light_style.css">
+</head>
+<body>
+    <ul>
+        <li><a href="Hudi.html">Home</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a class="active_bar" href="feedback.html">Feedback</a></li>
+        <li><a href="hangman.html">Hangman</a></li>
+        <li style="float:right"><button class="themeB" id="changeThemeButton" onclick="changeTheme()">Change Theme</button></li>
+    </ul><br><br>
+
+  <div class="margin8">
+  <p style="font-size: 30px;"><strong>Error Reporting</strong></p>
+  <p>Please report errors in the dictionary using the form below. (Good feedbacks are also welcomed)</p>
+
+  <form onsubmit="handleFormSubmit(event)">
+    <label class="label_feedback" for="errorw">Description of the Error:</label>
+    <textarea class="textarea_feedback" id="errorw" name="errorw" required></textarea>
+    
+    <br><label for="email">Your Email Address (optional):</label>
+    <input type="email" class="email_feedback" id="email" name="email">
+
+    <button type="submit" style="margin-left: auto;">Submit Error</button>
+  </form>
+  </div>
+
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault(); // prevent the default behavior of the func
+
+      // Take forum data
+      const errorDescription = document.getElementById('errorw').value;
+      const email = document.getElementById('email').value;
+
+      // I can send to api or email from here
+      console.log('Description of the Error:', errorDescription);
+      console.log('Email Address:', email);
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

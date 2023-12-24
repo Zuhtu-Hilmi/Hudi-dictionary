@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="theme" rel="stylesheet" href="light_style.css">
+  <title>Hudi Dictionary</title>
+</head>
+<body>
+  <ul>
+    <li><a class="active_bar" href="Hudi.html">Home</a></li>
+    <li><a href="about_us.html">About Us</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="hangman.html">Hangman</a></li>
+    <li style="float:right"><button class="themeB" id="changeThemeButton" onclick="changeTheme()">Change Theme</button></li>
+  </ul>
+    <header>
+      <br><br><p><h1>Hudi Dictionary</h1></p><br>
+      <div class="search-bar">
+        <input type="text" id="kelime" placeholder="Search for a word" oninput="searchDictionary()">
+      </div>
+    </header>
+
+    <main id="wordList">
+      <!-- Word entries will be dynamically added here -->
+    </main>
+
+    <marquee behavior="alternate" loop="99999" scrollamount="4" height="300" width="100%" direction="down">
+      <img src="pic.jpg">
+    </marquee>
+
+    <!-- <div class="currency">
+    <fxwidget-er inverse="true" amount="1" decimals="2" large="false" shadow="true" symbol="true" flag="true" changes="true" grouping="true" border="false" main-curr="TRY" sel-curr="BTC,USD,EUR" background-color="#fff"></fxwidget-er>
+    <a href="https://currencyrate.today/"></a>
+    <script async src="https://s.fx-w.io/widgets/exchange-rates/latest.js"></script>
+    </div> -->
+
+    <footer>
+      <p>Contact info : <a class="gmail_info" href="mailto:hudict@gmail.com">hudict@gmail.com</a></p><br>
+      <p>&copy; 2023 Hudi Dictionary</p>
+    </footer>
+  
+    <script src="script.js"></script>
+  </body>
+</html>
