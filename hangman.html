@@ -3,16 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Hangman Game</title>
+    <title>Hangman Game</title>
+    <link id="theme" rel="stylesheet" href="light_style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-
-        h1 {
-            color: #333;
+            background-image: url("background_images/wrinkled-paper-300x168.jpg");
         }
 
         #word-display {
@@ -30,86 +25,31 @@
             font-weight: bold;
             color: #FF0000;
         }
+
+        #hangman-images {
+            margin-top: 20px;
+        }
+
+        .hangman-image {
+            display: none;
+        }
     </style>
-    <link id="theme" rel="stylesheet" href="light_style.css">
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; text-align: center;">
     <ul>
         <li><a href="Hudi.html">Home</a></li>
         <li><a href="about_us.html">About Us</a></li>
         <li><a href="feedback.html">Feedback</a></li>
         <li><a class="active_bar" href="hangman.html">Hangman</a></li>
       </ul>
-    <h1>Hangman Game</h1>
+    
+    <br><br><h1 style="color: #333;">Hangman Game</h1>
+    <br><img id="hmImg" src='hangman_images/hangman-0.svg'/><br>
     <div id="word-display"></div>
     <div id="letters-guessed">Letters Guessed: </div>
     <div id="message"></div>
+    <img id="gif" src="">
 
-    <script>
-        const words = ['hangman', 'javascript', 'developer', 'programming', 'webpage', 'html', 'css'];
-        const selectedWord = words[Math.floor(Math.random() * words.length)];
-        let wordDisplay = Array(selectedWord.length).fill('_');
-        let guessedLetters = [];
-        const maxIncorrectGuesses = 6;
-        let incorrectGuesses = 0;
-
-        function updateWordDisplay() {
-            document.getElementById('word-display').innerText = wordDisplay.join(' ');
-        }
-
-        function updateLettersGuessed() {
-            document.getElementById('letters-guessed').innerText = 'Letters Guessed: ' + guessedLetters.join(', ');
-        }
-
-        function checkGuess(letter) {
-            if (selectedWord.includes(letter)) {
-                for (let i = 0; i < selectedWord.length; i++) {
-                    if (selectedWord[i] === letter) {
-                        wordDisplay[i] = letter;
-                    }
-                }
-                updateWordDisplay();
-
-                if (!wordDisplay.includes('_')) {
-                    displayMessage('Congratulations! You guessed the word!');
-                }
-            } else {
-                guessedLetters.push(letter);
-                updateLettersGuessed();
-
-                incorrectGuesses++;
-
-                if (incorrectGuesses === maxIncorrectGuesses) {
-                    displayMessage('Game over. The word was: ' + selectedWord);
-                }
-            }
-        }
-
-        function displayMessage(message) {
-            document.getElementById('message').innerText = message;
-        }
-
-        // Event listener for key presses
-        document.addEventListener('keypress', function (event) {
-            // Decide if the game will continue
-            if (incorrectGuesses === maxIncorrectGuesses || !wordDisplay.includes('_')) {
-            return;
-            }
-            // Check if the pressed key is a letter
-            if (/^[a-zA-Z]$/.test(event.key)) {
-                const guessedLetter = event.key.toLowerCase();
-
-                // Check if the letter has already been guessed
-                if (!guessedLetters.includes(guessedLetter)) {
-                    checkGuess(guessedLetter);
-                }
-            }
-        });
-
-        // Initialize the game
-        updateLettersGuessed();
-        updateWordDisplay();
-        displayMessage('');
-    </script>
+      <script src="hangman.js"></script>
 </body>
 </html>

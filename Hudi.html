@@ -4,6 +4,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link id="theme" rel="stylesheet" href="light_style.css">
   <title>Hudi Dictionary</title>
+  <style>
+  #quiz-container {
+    display: inline-block;
+    width: 400px;
+    height: auto;
+    margin: 0 auto 16px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  #score {
+    float: right;
+    font-weight: bold;
+    margin: 10px;
+  }
+  #question-container {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+  }
+  #question {
+    margin: 0;
+  }
+  #options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .quiz-button {
+    width: 100%;
+    background-color: #4caf50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px; /* Padding around the button text */
+    margin: 5px; /* Margin between buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  .quiz-button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+  }
+  </style>
 </head>
 <body>
   <ul>
@@ -24,9 +69,24 @@
       <!-- Word entries will be dynamically added here -->
     </main>
 
-    <marquee behavior="alternate" loop="99999" scrollamount="4" height="300" width="100%" direction="down">
-      <img src="pic.jpg">
-    </marquee>
+    <div style="display: flex; align-items: center;">
+      <button class="randomWordB" onclick="getRandomWord()">Get Random Word</button>
+      <div id="randomWordContainer" style="margin-left: 12px; background-color: rgb(241, 222, 196); padding: 8px 16px;"></div><!-- Random word will be added here-->
+
+      <div id="quiz-container">
+        <div id="score"><span id="last-word-feedback" style="float: left;"></span>Score: <span id="current-score">0</span></div>
+        <div id="question-container">
+            <br><h3>Mini Quiz</h3>
+            <p id="question"></p>
+        </div>
+        <div id="options-container"></div>
+      </div>
+    </div>
+
+
+    <!--<marquee behavior="alternate" loop="99999" scrollamount="4" height="300" width="100%" direction="up">
+      <img src="background_images/pic.jpg">
+    </marquee>-->
 
     <!-- <div class="currency">
     <fxwidget-er inverse="true" amount="1" decimals="2" large="false" shadow="true" symbol="true" flag="true" changes="true" grouping="true" border="false" main-curr="TRY" sel-curr="BTC,USD,EUR" background-color="#fff"></fxwidget-er>
@@ -39,6 +99,7 @@
       <p>&copy; 2023 Hudi Dictionary</p>
     </footer>
   
-    <script src="script.js"></script>
+    <script src="search_dict.js"></script>
+    <script src="theme_button.js"></script>
   </body>
 </html>
