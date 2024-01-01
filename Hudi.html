@@ -69,11 +69,11 @@
       <!-- Word entries will be dynamically added here -->
     </main>
 
-    <div style="display: flex; align-items: center;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center;">
       <button class="randomWordB" onclick="getRandomWord()">Get Random Word</button>
-      <div id="randomWordContainer" style="margin-left: 12px; background-color: rgb(241, 222, 196); padding: 8px 16px;"></div><!-- Random word will be added here-->
+      <div id="randomWordContainer" style="margin: auto; background-color: rgb(241, 222, 196); padding: 8px 16px;"></div><!-- Random word will be added here-->
 
-      <div id="quiz-container">
+      <div id="quiz-container" style="margin-top: 70px;">
         <div id="score"><span id="last-word-feedback" style="float: left;"></span>Score: <span id="current-score">0</span></div>
         <div id="question-container">
             <br><h3>Mini Quiz</h3>
