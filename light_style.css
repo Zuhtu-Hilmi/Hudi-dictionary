@@ -1,0 +1,146 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0px;
+    background-color: #f8f8f8;
+  }
+
+  .margin8 {
+    padding: 8px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #1b2d40;
+  }
+  li {
+    float: left;
+    border-right: 1px solid #2c3e50;
+  }
+  li a {
+    display: block;
+    padding: 8px 16px;
+    margin: 0%;
+    margin-top: 0%;
+    text-align: center;
+    text-decoration: none;
+    color: #ddd;
+    cursor: pointer;
+  }
+  li a:hover:not(.active_bar) {
+    background-color: #111;
+  }
+  .active_bar {
+    background-color: #04AA6D;
+  }
+  
+  header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  h1 {
+    margin: 0;
+    color: white;
+  }
+
+  h2 {
+    color: black;
+  }
+  
+  .search-bar {
+    margin-top: 20px;
+  }
+  
+  input {
+    padding: 8px;
+    width: 70%;
+  }
+  
+  .themeB {
+    position: relative;
+    padding: 8px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+  }
+  .themeB:hover {
+    background-color: #cb6724;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .randomWordB {
+    display: inline-block;
+    position: relative;
+    padding: 100px 70px;
+    margin: 100px 70px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    color:#ddd;
+    background-color: #3e8e41;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px #999;
+  }
+  .randomWordB:hover {
+    background-color: #13420f;
+  }
+  .randomWordB:active {
+    background-color: #0d2b0a;
+    box-shadow: 0 5px #666;
+    transform: translateY(5px);
+  }
+
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .word {
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .mail_info:link {
+    text-decoration: none;
+  }
+
+  .label_feedback {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .textarea_feedback {
+    min-width: 40%;
+    width: 80%;
+    max-width: 99%;
+    min-height: 50px;
+    height: 100px;
+    max-height: 350px;
+    background-color: #ddd;
+    border-color: #333;
+  }
+  .email_feedback {
+    width: 50%;
+    margin-top: 16px;
+    background-color: #ddd;
+    border-color: #333
+  }
